@@ -1,0 +1,443 @@
+
+<!-- saved from url=(0053)file:///Users/shubhtuls/Downloads/s2s_supp/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><style type="text/css">
+    body {
+        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-weight:300;
+        font-size:16px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 1100px;
+    }
+
+    h1 {
+        font-weight:300;
+    }
+
+    .disclaimerbox {
+        background-color: #eee;
+        border: 1px solid #eeeeee;
+        border-radius: 10px ;
+        -moz-border-radius: 10px ;
+        -webkit-border-radius: 10px ;
+        padding: 20px;
+    }
+
+    video.header-vid {
+        height: 140px;
+        border: 1px solid black;
+        border-radius: 10px ;
+        -moz-border-radius: 10px ;
+        -webkit-border-radius: 10px ;
+    }
+
+    img.header-img {
+        height: 140px;
+        border: 1px solid black;
+        border-radius: 10px ;
+        -moz-border-radius: 10px ;
+        -webkit-border-radius: 10px ;
+    }
+
+    img.rounded {
+        border: 1px solid #eeeeee;
+        border-radius: 10px ;
+        -moz-border-radius: 10px ;
+        -webkit-border-radius: 10px ;
+    }
+
+    a:link,a:visited
+    {
+        color: #1367a7;
+        text-decoration: none;
+    }
+    a:hover {
+        color: #208799;
+    }
+
+    td.dl-link {
+        height: 160px;
+        text-align: center;
+        font-size: 22px;
+    }
+
+    .layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+        box-shadow:
+                0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+                5px 5px 0 0px #fff, /* The second layer */
+                5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+                10px 10px 0 0px #fff, /* The third layer */
+                10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
+                15px 15px 0 0px #fff, /* The fourth layer */
+                15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
+                20px 20px 0 0px #fff, /* The fifth layer */
+                20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
+                25px 25px 0 0px #fff, /* The fifth layer */
+                25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
+        margin-left: 10px;
+        margin-right: 45px;
+    }
+
+
+    .layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+        box-shadow:
+                0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+                5px 5px 0 0px #fff, /* The second layer */
+                5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+                10px 10px 0 0px #fff, /* The third layer */
+                10px 10px 1px 1px rgba(0,0,0,0.35); /* The third layer shadow */
+        margin-top: 5px;
+        margin-left: 10px;
+        margin-right: 30px;
+        margin-bottom: 5px;
+    }
+
+    .vert-cent {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .column {
+      float: left;
+      padding: 5px;
+    }
+   .center {
+    padding-top: 100px;
+    margin: auto;
+     width: 50%;
+    } 
+
+    /* Clearfix (clear floats) */
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    hr
+    {
+        border: 0;
+        height: 1.5px;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    }
+</style>
+
+
+  
+        <title>PixelTransformer</title>
+        <meta property="og:title" content="PixelTransformer: Sample Conditioned Signal Generation">
+        <meta property="og:image" content="https://shubhtuls.github.io/PixelTransformer/resources/images/teaser.png">
+		<meta property="og:description" content=" S. Tulsiani, A. Gupta.">
+  </head>
+
+  <body>
+    <br>
+    <center>
+    <span style="font-size:42px">PixelTransformer: Sample Conditioned Signal Generation</span>
+    </center>
+
+    <br>
+    <br>
+    <table align="center" width="900px">
+       <tbody><tr>
+       	<td align="center" width="100px">
+        <center>
+        <span style="font-size:20px"><a href="https://shubhtuls.github.io/">Shubham Tulsiani</a><sup>1</sup></span>
+        </center>
+        </td>
+        <td align="center" width="100px">
+        <center>
+        <span style="font-size:20px"><a href="http://www.cs.cmu.edu/~abhinavg/">Abhinav Gupta</a><sup>1,2</sup></span>
+        </center>
+        </td>
+        
+     </tr>
+  	</tbody></table>
+
+    <br>
+    <table align="center" width="800px">
+       <tbody><tr>
+        <td align="center" width="200px">
+        <center>
+          <span style="font-size:20px"><sup>1</sup>Facebook AI Research</span>
+        </center>
+        </td>
+          <td align="center" width="200px">
+        <center>
+          <span style="font-size:20px"><sup>2</sup>CMU</span>
+        </center>
+        </td>
+     </tr>
+    </tbody></table>
+    
+    <br>
+      <table align=center width=300px>
+       <tr>
+        <td align=center width=100px>
+        <center>
+        <span style="font-size:20px"><a href="#">[pdf]</a></span>
+        </center>
+        </td>
+     </tr>
+    </table>
+
+<!--
+    <table align=center width=900px>
+		<div class="row">
+		<div class="center" width="1000px">
+		<div class="column">
+		<img src="img/vis_0.gif">
+		</div>
+		<div class="column">
+		<img src="img/vis_1.gif">
+		</div>
+		<div class="column">
+		<img src="img/vis_2.gif">
+		</div>
+		<div class="column">
+		<img src="img/vis_3.gif">
+		</div>
+		</div>
+
+		<img style="height:250px" src="./poly/pred0.gif"/>
+		</div>
+		<td width=600px>
+		<center>
+           <span style="font-size:14px" width=600px><i>We propose a generative model that can infer a distribution for the underlying spatial signal conditioned on sparse samples e.g. images given a few observed pixels, 3D shapes from SDF samples, or polynomials from sparse evaluations.</i>
+         </center>
+     	</td>
+    </table>
+    <hr>
+-->
+<br><br>
+    <table align="center" width="900px">
+        <tbody><tr>
+        <td align="center">
+            <img src="./figures/approach.png" width="800px">
+        </td>
+
+    </tr></tbody></table>
+    <center>
+        <br>
+       <span style="font-size:14px" width="1000px"><i><b>Overview.</b> Left: Our model takes as input a set of observed pixel locations and values ({(<b>x</b><sub>k</sub>,<b>v</b><sub>k</sub>)}) and can then predict the value distribution for any query position <b>x</b>. Right: This model can be trained in a self-supervised manner by drawing random samples from training images and maximizing likelihood of true values for random query locations. Our approach allows us to autoregressively model distributions for many spatial signals (e.g. images, shapes, videos, polynomials) conditioned on a sparse set of sample observations (e.g. pixels)</i></span>
+     </center>
+
+
+<br><hr><br>
+    <table align="center" width="900px">
+    	<tbody><tr>
+		<td align="center">
+			<img src="./img/vis_4.gif">
+			<img src="./img/vis_5.gif">
+			<img src="./img/vis_6.gif">
+			<img src="./img/vis_7.gif">
+			<img src="./img/vis_8.gif">
+			<img src="./img/vis_9.gif">
+			<img src="./img/vis_10.gif">
+			<img src="./img/vis_11.gif">
+			<img src="./img/vis_12.gif">
+			<img src="./img/vis_13.gif">
+			<img src="./img/vis_14.gif">
+			<img src="./img/vis_15.gif">
+		</td>
+
+    </tr></tbody></table>
+	<center>
+       <span style="font-size:14px" width="1000px"><i><b>Image Completion.</b> Top: Ground-truth Image. Bottom: Three random samples generated by our approach given 32 observed pixels (visualized in initial frame of animation).</i></span>
+     </center>
+
+
+<br><hr><br>
+    <table align="center" width="900px">
+		<tbody><tr>
+			<td>
+				<model-viewer src="https://shubhtuls.github.io/s2s/shapes/0_0.glb" alt="A 3D model of an astronaut" style="width: 100%; height: 200;" shadow-intensity="1" camera-controls="" auto-rotate="" ar="" ar-status="not-presenting">
+				</model-viewer>
+			</td>
+			<td>
+				<model-viewer src="https://shubhtuls.github.io/s2s/shapes/0_1.glb" alt="A 3D model of an astronaut" style="width: 100%; height: 200;" shadow-intensity="1" camera-controls="" auto-rotate="" ar="" ar-status="not-presenting">
+				</model-viewer>
+			</td>
+			<td>
+				<model-viewer src="https://shubhtuls.github.io/s2s/shapes/0_2.glb" alt="A 3D model of an astronaut" style="width: 100%; height: 200;" shadow-intensity="1" camera-controls="" auto-rotate="" ar="" ar-status="not-presenting">
+				</model-viewer>
+			</td>
+			<td>
+				<model-viewer src="https://shubhtuls.github.io/s2s/shapes/0_3.glb" alt="A 3D model of an astronaut" style="width: 100%; height: 200;" shadow-intensity="1" camera-controls="" auto-rotate="" ar="" ar-status="not-presenting">
+				</model-viewer>
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<model-viewer src="https://shubhtuls.github.io/s2s/shapes/1_0.glb" alt="A 3D model of an astronaut" style="width: 100%; height: 200;" shadow-intensity="1" camera-controls="" auto-rotate="" ar="" ar-status="not-presenting">
+				</model-viewer>
+			</td>
+			<td>
+				<model-viewer src="https://shubhtuls.github.io/s2s/shapes/1_1.glb" alt="A 3D model of an astronaut" style="width: 100%; height: 200;" shadow-intensity="1" camera-controls="" auto-rotate="" ar="" ar-status="not-presenting">
+				</model-viewer>
+			</td>
+			<td>
+				<model-viewer src="https://shubhtuls.github.io/s2s/shapes/1_2.glb" alt="A 3D model of an astronaut" style="width: 100%; height: 200;" shadow-intensity="1" camera-controls="" auto-rotate="" ar="" ar-status="not-presenting">
+				</model-viewer>
+			</td>
+			<td>
+				<model-viewer src="https://shubhtuls.github.io/s2s/shapes/1_3.glb" alt="A 3D model of an astronaut" style="width: 100%; height: 200;" shadow-intensity="1" camera-controls="" auto-rotate="" ar="" ar-status="not-presenting">
+				</model-viewer>
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<model-viewer src="https://shubhtuls.github.io/s2s/shapes/2_0.glb" alt="A 3D model of an astronaut" style="width: 100%; height: 200;" shadow-intensity="1" camera-controls="" auto-rotate="" ar="" ar-status="not-presenting">
+				</model-viewer>
+			</td>
+			<td>
+				<model-viewer src="https://shubhtuls.github.io/s2s/shapes/2_1.glb" alt="A 3D model of an astronaut" style="width: 100%; height: 200;" shadow-intensity="1" camera-controls="" auto-rotate="" ar="" ar-status="not-presenting">
+				</model-viewer>
+			</td>
+			<td>
+				<model-viewer src="https://shubhtuls.github.io/s2s/shapes/2_2.glb" alt="A 3D model of an astronaut" style="width: 100%; height: 200;" shadow-intensity="1" camera-controls="" auto-rotate="" ar="" ar-status="not-presenting">
+				</model-viewer>
+			</td>
+			<td>
+				<model-viewer src="https://shubhtuls.github.io/s2s/shapes/2_3.glb" alt="A 3D model of an astronaut" style="width: 100%; height: 200;" shadow-intensity="1" camera-controls="" auto-rotate="" ar="" ar-status="not-presenting">
+				</model-viewer>
+			</td>
+		</tr>
+
+    </tbody></table>
+	<center>
+       <span style="font-size:14px" width="1000px"><i><b>Shape Generation.</b> Left: Ground-truth 3D Shape and locations of the 32 input SDF samples. Right: Conditionally generated sample shapes using our approach.</i></span>
+     </center>
+
+<br><hr><br>
+
+    <table align="center" width="900px">
+    	<tbody><tr>
+		<td align="center">
+			<img src="./poly/pred1.gif" width="290">
+			<img src="./poly/pred2.gif" width="290">
+			<img src="./poly/pred3.gif" width="290">
+		</td>
+		</tr>
+
+    	<tr>
+		<td align="center">
+			<img src="./poly/pred4.gif" width="290">
+			<img src="./poly/pred5.gif" width="290">
+			<img src="./poly/pred6.gif" width="290">
+		</td>
+		</tr>
+    </tbody></table>
+	<center>
+       <span style="font-size:14px" width="1000px"><i><b>Polynomial Prediction.</b> Given evaluations of a degree-6 polynomial (green) at a sparse set of points (red), our model allows sampling diverse possible functions (yellow).</i></span>
+     </center>
+
+<br><hr><br>
+
+    <table align="center" width="900px">
+        <tbody>
+        <tr><td align="left"><b>GT</b></td></tr>
+        <tr>
+        <td align="center">
+            <img src="videos/vis_0_0.gif">
+            <img src="videos/vis_1_0.gif">
+            <img src="videos/vis_2_0.gif">
+            <img src="videos/vis_3_0.gif">
+            <img src="videos/vis_4_0.gif">
+            <img src="videos/vis_5_0.gif">
+            <img src="videos/vis_6_0.gif">
+            <img src="videos/vis_7_0.gif">
+            <img src="videos/vis_8_0.gif">
+            <img src="videos/vis_9_0.gif">
+            <img src="videos/vis_10_0.gif">
+            <img src="videos/vis_11_0.gif">
+        </td>
+        </tr>
+
+        <tr><td align="left"><b>Nearest Neighbor Visualization of Initially Observed Pixels</b></td></tr>
+        <tr>
+        <td align="center">
+            <img src="videos/vis_0_1.gif">
+            <img src="videos/vis_1_1.gif">
+            <img src="videos/vis_2_1.gif">
+            <img src="videos/vis_3_1.gif">
+            <img src="videos/vis_4_1.gif">
+            <img src="videos/vis_5_1.gif">
+            <img src="videos/vis_6_1.gif">
+            <img src="videos/vis_7_1.gif">
+            <img src="videos/vis_8_1.gif">
+            <img src="videos/vis_9_1.gif">
+            <img src="videos/vis_10_1.gif">
+            <img src="videos/vis_11_1.gif">
+        </td>
+        <tr><td align="left"><b>Generated Videos</b></td></tr>
+        <tr>
+        <td align="center">
+            <img src="videos/vis_0_2.gif">
+            <img src="videos/vis_1_2.gif">
+            <img src="videos/vis_2_2.gif">
+            <img src="videos/vis_3_2.gif">
+            <img src="videos/vis_4_2.gif">
+            <img src="videos/vis_5_2.gif">
+            <img src="videos/vis_6_2.gif">
+            <img src="videos/vis_7_2.gif">
+            <img src="videos/vis_8_2.gif">
+            <img src="videos/vis_9_2.gif">
+            <img src="videos/vis_10_2.gif">
+            <img src="videos/vis_11_2.gif">
+        </td></tr>
+        <tr>
+        <td align="center">
+            <img src="videos/vis_0_3.gif">
+            <img src="videos/vis_1_3.gif">
+            <img src="videos/vis_2_3.gif">
+            <img src="videos/vis_3_3.gif">
+            <img src="videos/vis_4_3.gif">
+            <img src="videos/vis_5_3.gif">
+            <img src="videos/vis_6_3.gif">
+            <img src="videos/vis_7_3.gif">
+            <img src="videos/vis_8_3.gif">
+            <img src="videos/vis_9_3.gif">
+            <img src="videos/vis_10_3.gif">
+            <img src="videos/vis_11_3.gif">
+        </td></tr>
+        <tr>
+        <td align="center">
+            <img src="videos/vis_0_4.gif">
+            <img src="videos/vis_1_4.gif">
+            <img src="videos/vis_2_4.gif">
+            <img src="videos/vis_3_4.gif">
+            <img src="videos/vis_4_4.gif">
+            <img src="videos/vis_5_4.gif">
+            <img src="videos/vis_6_4.gif">
+            <img src="videos/vis_7_4.gif">
+            <img src="videos/vis_8_4.gif">
+            <img src="videos/vis_9_4.gif">
+            <img src="videos/vis_10_4.gif">
+            <img src="videos/vis_11_4.gif">
+        </td>
+        </tr>
+
+    </tbody></table>
+    <center>
+       <span style="font-size:14px" width="1000px"><i><b>Video Synthesis.</b> Given a total of 1024 pixels across 30 frames, our model allows generating plausible videos that capture the coarse motion.</i></span>
+     </center>
+
+    <br><hr><br>
+
+	<center><h1>Acknowledgements</h1></center>
+	  We would like to thank Deepak Pathak and the members of the CMU Visual Robot Learning lab for helpful discussions and feedback. This webpage template was borrowed from some <a href="https://richzhang.github.io/colorization/">colorful folks</a>.
+	<table align="center" width="900px">
+	<tbody><tr>
+	</tr>
+	</tbody></table>
+
+<!-- Include both scripts below to support all browsers! -->
+
+  <!-- Loads <model-viewer> for modern browsers: -->
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+
+</body></html>
