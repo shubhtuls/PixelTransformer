@@ -18,10 +18,10 @@ git clone git@github.com:kuangliu/pytorch-cifar.git
 Please modify the paths in the [config files](conf/).
 
 ## Training
-Please see the sample commands in experiments/s2s.py
+See the sample commands in experiments/s2s.py
 
 ## Evaluating
-Please see the sample commands in benchmark/
+See the sample commands in benchmark/
 
 ## Preprocessing Data
 Most of the image datasets used correspond to standard [torchvision datasets](https://pytorch.org/vision/stable/datasets.html). The cat dataset used is from [Wu. etal's CVPR 2020 work](https://github.com/elliottwu/unsup3d), and can be downloaded using [their provided script](https://github.com/elliottwu/unsup3d/blob/master/data/download_cat.sh).
